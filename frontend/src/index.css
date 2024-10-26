@@ -1,0 +1,427 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+:root {
+  --primary: #ee3f0a;
+  --error: #e7195a;
+}
+body {
+/*  background: #f1f1f1;*/
+  background-image: url("/public/imgs/image-3.jpeg"); 
+  background-size: cover; /* Optional: to cover the entire area */
+  background-position: center; /* Optional: to center the image */
+
+  height: 100vh; /* Full height of the viewport */
+
+  margin: 0;
+  font-family: "Poppins";
+}
+header {
+  background: #0a0a0a;
+}
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #faf6f6;
+  text-decoration: none;
+}
+.pages{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Navbar links styling */
+nav a {
+  margin-left: 10px;
+  font-size: 1.1em; /* Slightly larger font size */
+  padding: 8px 12px; /* Add padding for better click area */
+  border: 2px solid var(--primary); /* Orange border */
+  border-radius: 4px; /* Rounded corners */
+  color: var(--primary); /* Text color matches the primary color */
+  text-decoration: none; /* Remove underline */
+  transition: background 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+nav a:hover {
+  background: var(--primary); /* Change background on hover */
+  color: #fff; /* Change text color on hover */
+}
+
+
+
+.workout-details {
+  background: #fff;
+  border-radius: 4px;
+  /* margin: 20px auto; */
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.workout-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+.workout-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+.workout-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+}
+
+/* New workout form */
+.create {
+  background-color: rgba(158, 59, 34, 0.5);
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding around the content */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  /* margin: 20px auto; Centering the form */
+  max-width: 400px; /* Keep the same max width as before */
+  width: 94%; /* Ensure it takes full width available up to max-width */
+}
+/* Styles for the form heading */
+.create h3 {
+  font-size: 1.7em; /* Make the heading larger */
+  margin-bottom: 15px; /* Add some space below the heading */
+  text-align: center; /* Center the heading */
+  color: #0f0f0f;
+  text-shadow: 1px 1px 2px var(--primary); /* Subtle shadow effect */
+}
+/* Additional styles for input fields */
+label, input {
+  display: block;
+}
+
+label {
+  color: #131212;
+}
+
+.create label {
+  color: #fdfcfc;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+input.error {
+  border: 1px solid var(--error);
+}
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a, nav button {
+  margin-left: 10px;
+}
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+}
+
+/* Style for the email span in the navbar */
+nav span {
+  color: #fff; /* Set text color to white */
+  font-size: 1em; /* Adjust font size as needed */
+  margin-right: 10px; /* Add some space to the right */
+  font-weight: 500; /* Optional: make the font slightly bolder */
+}
+
+/* auth forms */
+form.signup, form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+/* Styles for the login and signup forms */
+form.login, form.signup {
+  background: rgba(255, 255, 255, 0.9); /* Light background with slight transparency */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding around the content */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+  margin: 40px auto; /* Centering the forms */
+  max-width: 400px; /* Maximum width */
+  width: 90%; /* Responsive width */
+}
+
+/* Styles for form headings */
+form h3 {
+  font-size: 1.5em; /* Larger font size for headings */
+  color: var(--primary); /* Use primary color for consistency */
+  text-align: center; /* Center the heading */
+  margin-bottom: 15px; /* Space below heading */
+}
+
+/* Styles for input fields */
+form label {
+  font-weight: 500; /* Bold labels */
+}
+
+form input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%; /* Full width for input fields */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Styles for buttons */
+form button {
+  background: var(--primary);
+  color: #fff; /* White text */
+  padding: 10px;
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 1em; /* Font size */
+  transition: background 0.3s; /* Smooth transition for background color */
+}
+
+form button:hover {
+  background: darkorange; /* Darker shade on hover */
+}
+
+/* Error message styling */
+div.error {
+  padding: 10px;
+  background: #ffefef; /* Light red background */
+  border: 1px solid var(--error); /* Error color border */
+  color: var(--error); /* Error text color */
+  border-radius: 4px; /* Rounded corners */
+  margin-top: 10px; /* Space above error message */
+}
+
+
+
+/* Styles for the empty fields message */
+/* Error message styling */
+div.error {
+  padding: 10px;
+  background: #ffefef; /* Light red background */
+  border: 1px solid var(--error); /* Error color border */
+  color: var(--error); /* Error text color */
+  border-radius: 4px; /* Rounded corners */
+  margin-top: 10px; /* Space above error message */
+  margin-bottom: 5px; /* Reduce space below error message */
+}
+
+/* Styles for the empty fields message */
+.empty-fields {
+  color: var(--error); /* Error text color */
+  border-radius: 8px; /* Rounded corners */
+  list-style-type: none; /* Remove default list styling */
+  margin: 5px 0; /* Reduced margin for both top and bottom */
+  padding: 0; /* Remove default padding */
+}
+
+.empty-fields li {
+  font-weight: 500; /* Make the list items slightly bolder */
+  margin-bottom: 2px; /* Add slight space between list items */
+}
+
+
+/* Edit styling */
+.workout-details form {
+  margin-top: 10px;
+}
+
+.workout-details form input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.workout-details form button {
+  margin-right: 5px;
+  padding: 8px 12px;
+  background-color: #1aac83;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.workout-details form button:hover {
+  background-color: #148a63;
+}
+
+.workout-details .material-symbols-outlined {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Modal backdrop and content */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-content button {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
+.modal-content button[type="button"] {
+  background-color: #ccc;
+}
+
+/* Icons */
+.material-symbols-outlined {
+  cursor: pointer;
+  background-color: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.delete-icon:hover {
+  background-color: #da2222;
+}
+
+.edit-icon {
+  cursor: pointer;
+}
+.edit-icon:hover {
+  background-color: #1aac83;
+}
+
+
+/* Loading Spinner Styles */
+.loading {
+  position: fixed; /* Use fixed positioning */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 999; /* Ensure it appears above other content */
+}
+
+.loading .spinner {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid var(--primary); /* Primary color */
+  border-radius: 50%;
+  width: 50px; /* Size of the spinner */
+  height: 50px; /* Size of the spinner */
+  animation: spin 1s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 40px; /* Reduce the gap to a smaller value, e.g., 40px */
+}
+
+.create {
+  margin: 10px auto; /* Reduce margin around the form */
+}
+
+.workout-details {
+  margin: 10px auto; /* Reduce margin around each workout card */
+}
+
+/* Footer */
+
+.footer {
+  position: absolute; /* Change from relative to absolute */
+  bottom: 0; /* Position it at the bottom */
+  left: 0; /* Align it to the left */
+  background-color: #0a0a0a;
+  color: #faf6f6;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1.1em;
+}
