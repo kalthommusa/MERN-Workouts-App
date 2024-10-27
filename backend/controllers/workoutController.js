@@ -67,7 +67,7 @@ const createWorkout = async (req, res) => {
 
     // include an error message and the list of empty fields for frontend validation
     if(emptyFields.length > 0) {
-      return res.status(400).json({ error: 'Please fill in all the fields:', emptyFields })
+      return res.status(400).json({ error: 'All fields must be filled', emptyFields })
     }
 
     // extract the user id from the authenticated user's request object (set by middleware)
