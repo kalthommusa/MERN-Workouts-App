@@ -36,7 +36,7 @@ const Home = () => {
           <WorkoutDetails key={workout._id} workout={workout} /> 
         ))}
       </div>
-      <WorkoutForm /> // Render workout form
+      <WorkoutForm /> 
     </div>
   );
 }

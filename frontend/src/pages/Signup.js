@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useSignup } from "../hooks/useSignup" // custom hook for handling signup logic
 import { useNavigate } from 'react-router-dom'
+import Spinner from "../components/Spinner"
 
 const Signup = () => {
   const [email, setEmail] = useState('')

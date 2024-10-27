@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import ManageWorkout from './pages/ManageWorkout';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import NotFound from './pages/NotFound'; 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer'; 
 
@@ -33,6 +34,10 @@ function App() {
             <Route 
               path="/login" 
               element={!user ? <Login /> : <Navigate to="/" />} 
+            />
+            <Route 
+              path="*" 
+              element={<NotFound />} // Catch-all route for Not Found
             />
           </Routes>
         </div>

@@ -7,7 +7,7 @@ const Navbar = () => {
   const { user } = useAuthContext() // destructure the user state from the Auth context custom hook 
 
   const handleClick = () => {
-    logout() // call logout function when clicked
+    logout() 
   }
 
   return (

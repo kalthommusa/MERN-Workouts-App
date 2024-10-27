@@ -93,15 +93,6 @@ const WorkoutForm = () => {
       {error && (
         <div className="error">
           {error}
-          {emptyFields.length > 0 && (
-            <div className="empty-fields">
-              <ul>
-                {emptyFields.map((field) => (
-                  <li key={field}>{field}</li> 
-                ))}
-              </ul>
-            </div>
-          )}
         </div>
       )}
     </form>
