@@ -48,6 +48,7 @@ const EditWorkout = ({ workout, setIsModalOpen }) => {
     <div className="modal-backdrop">
       <div className="modal-content">
         <h3>Edit Workout</h3>
+        
         <form onSubmit={handleSubmit}>
 
           <label>Title:</label>
