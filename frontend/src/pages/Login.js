@@ -25,15 +25,13 @@ const Login = () => {
         type="email" 
         value={email} 
         onChange={(e) => setEmail(e.target.value)} // update email state on change
-        className={error ? 'error' : ''} 
       />
 
       <label>Password:</label>
       <input 
         type="password" 
+        value={password}
         onChange={(e) => setPassword(e.target.value)} // update password state on change
-        value={password} 
-        required 
       />
 
       <button disabled={isLoading}>
