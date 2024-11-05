@@ -1,41 +1,40 @@
 const User = require('../models/userModel')
 const jwt = require('jsonwebtoken')
 
+// function to create a JWT token for the given user ID
 const createToken = (_id) => {
   return jwt.sign({_id}, process.env.SECRET, { expiresIn: '3d' })  
 }
 
-// signup a new user
+// controller function to signup a new user
 const signupUser = async (req, res) => {
-  const { email, password } = req.body
-
   try {
-    // call the signup static method to create a new user
+    // destructure email and password from request body
+    const { email, password } = req.body
     const user = await User.signup(email, password)
-
-    // create a token using the user's _id
     const token = createToken(user._id)
-
-    res.status(200).json({email, token})
+    res.status(200).json({ email, token })
   } catch (error) {
-    res.status(400).json({error: error.message})
+    res.status(400).json({
+      error: error.message,
+      emptyFields: error.emptyFields
+    })
   }
 }
 
-// login an existing user
+// controller function to log in an existing user
 const loginUser = async (req, res) => {
-  const { email, password } = req.body
-
   try {
-    // call the login static method to authenticate the user
+    // destructure email and password from request body
+    const { email, password } = req.body
     const user = await User.login(email, password)
-
-    // create a token using the user's _id
     const token = createToken(user._id)
-
-    res.status(200).json({email, token})
+    res.status(200).json({ email, token })
   } catch (error) {
-    res.status(400).json({error: error.message})
+    res.status(400).json({
+      error: error.message,
+      emptyFields: error.emptyFields
+    })
   }
 }
 
