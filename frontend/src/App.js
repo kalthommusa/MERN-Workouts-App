@@ -1,14 +1,14 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // pages & components
-import Home from './pages/Home';
-import ManageWorkout from './pages/ManageWorkout';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
-import NotFound from './pages/NotFound'; 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer'; 
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import ManageWorkout from './pages/ManageWorkout';
+import NotFound from './pages/NotFound'; 
 
 function App() {
   const { user } = useAuthContext();
@@ -29,7 +29,7 @@ function App() {
             />
             <Route 
               path="/signup" 
-              element={!user ? <Signup /> : <Navigate to="/login" />} 
+              element={!user ? <Signup /> : <Navigate to="/" />} 
             />
             <Route 
               path="/login" 
@@ -37,7 +37,7 @@ function App() {
             />
             <Route 
               path="*" 
-              element={<NotFound />} // Catch-all route for Not Found
+              element={<NotFound />} 
             />
           </Routes>
         </div>

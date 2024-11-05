@@ -1,19 +1,21 @@
 import { useState } from "react";
-import { useLogin } from "../hooks/useLogin"; // custom hook for handling login logic
-import Spinner from "../components/Spinner"; 
+import { useLogin } from "../hooks/useLogin";
+import Spinner from "../components/Spinner";
 
 const Login = () => {
+  // state variables to hold user input for email and password
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { login, error, isLoading } = useLogin(); 
 
-  // handle login form submission
+  // destructure properties from the custom hook 
+  const { login, error, emptyFields, isLoading } = useLogin();
+
+  // handle form submission
   const handleSubmit = async (e) => {
-    // prevent default form submission behavior
-    e.preventDefault(); 
-
-    // call the login function
-    await login(email, password); 
+    // prevent the default behavior of reloading the page 
+    e.preventDefault();
+    // attempt to login by calling the login function
+    await login(email, password);
   };
 
   return (
@@ -23,8 +25,9 @@ const Login = () => {
       <label>Email address:</label>
       <input 
         type="email" 
-        value={email} 
+        value={email}
         onChange={(e) => setEmail(e.target.value)} // update email state on change
+        className={emptyFields.includes('email') ? 'error' : ''} // highlight if there's an error
       />
 
       <label>Password:</label>
@@ -32,13 +35,14 @@ const Login = () => {
         type="password" 
         value={password}
         onChange={(e) => setPassword(e.target.value)} // update password state on change
+        className={emptyFields.includes('password') ? 'error' : ''} // highlight if there's an error
       />
 
       <button disabled={isLoading}>
-        {isLoading ? <Spinner /> : 'Log in'} 
+        {isLoading ? <Spinner /> : 'Log in'}  {/* show spinner while loading */}
       </button>
 
-      {error && <div className="error">{error}</div>}
+      {error && <div className="error">{error}</div>} {/* display error message if exists */}
     </form>
   );
 };

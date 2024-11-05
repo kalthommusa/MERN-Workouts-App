@@ -1,43 +1,45 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-// custom hook for signing up users
+// custom hook for signing up user
 export const useSignup = () => {
-  const [error, setError] = useState(null) // state for error message
-  const [isLoading, setIsLoading] = useState(null) // state for loading status
-
+  // state variables for error handling and loading state
+  const [error, setError] = useState(null); 
+  const [emptyFields, setEmptyFields] = useState([]); 
+  const [isLoading, setIsLoading] = useState(null); 
+ 
+  // function that interacts with the backend to signup the user
   const signup = async (email, password) => {
-    // set loading to true while request is in progress
-    setIsLoading(true)
-    // clear any existing error
-    setError(null)
+    // start loading spinner
+    setIsLoading(true); 
+    // clear any previous errors
+    setError(null); 
+    // reset empty fields
+    setEmptyFields([]); 
 
-    // send POST request to the signup API endpoint
+    // send POST request to signup API endpoint 
     const response = await fetch('/api/user/signup', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ email, password })
-    })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }) // convert email and password to JSON format
+    });
     // parse JSON response
-    const json = await response.json()
+    const json = await response.json(); 
 
-    // if the signup fails, display error message
+    // check for errors in the response
     if (!response.ok) {
-      // stop loading
-      setIsLoading(false)
-      // set error state with response error
-      setError(json.error)
-      // indicate failure
-      return false; 
+      //set error message
+      setError(json.error);
+      // set empty fields 
+      setEmptyFields(json.emptyFields);
+      // stop loading spinner
+      setIsLoading(false);
+      return false;
+    } else {
+      // on successful signup, stop loading spinner
+      setIsLoading(false);
+      return true;
     }
-    
-    // if signup is successful
-    if (response.ok) {
-      // stop loading
-      setIsLoading(false)
-      // indicate success without handling user data here
-      return true; 
-    }
-  }
+  };
 
-  return { signup, isLoading, error }
-}
+  return { signup, isLoading, error, emptyFields };
+};

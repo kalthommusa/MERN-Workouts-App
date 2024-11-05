@@ -353,7 +353,8 @@ form button:hover {
   justify-content: center;
   height: 60vh; 
   text-align: center;
-  color: #333; 
+  color: #333;
+  background-color: rgba(177, 172, 171, 0.5);
 }
 .not-found h1 {
   font-size: 5em; 
@@ -374,4 +375,14 @@ form button:hover {
 }
 .not-found a:hover {
   background-color: #c33f0a; 
+}
+
+/* Navbar active link styles */
+nav a.active {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+nav a.active:hover {
+  background-color: darkorange;
 }

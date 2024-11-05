@@ -1,13 +1,13 @@
 import { useNavigate } from 'react-router-dom'; 
 
-// function for formatting date
+// function for formatting date 
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'; 
 
 const WorkoutDetails = ({ workout }) => {
   const navigate = useNavigate(); 
 
   const handleSettings = () => {
-    // navigate to specific workout page
+    // navigate to a specific workout page
     navigate(`/${workout._id}`); 
   }
 

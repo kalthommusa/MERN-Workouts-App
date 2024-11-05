@@ -1,5 +1,6 @@
 import React from 'react';
 
+// functional component for displaying a loading spinner
 const Spinner = () => {
   return (
     <div className="loading">
