@@ -19,7 +19,7 @@ const requireAuth = async (req, res, next) => {
     const { _id } = jwt.verify(token, process.env.SECRET)
 
     // find the user by their _id and attach the user object to the request
-    req.user = await User.findOne({ _id }).select('_id') // select only the user ID 
+    req.user = await User.findOne({ _id }).select('_id') // select only the user id
     
     // proceed to the next middleware or route handler
     next()
