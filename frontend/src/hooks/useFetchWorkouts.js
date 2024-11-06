@@ -8,7 +8,7 @@ const useFetchWorkouts = () => {
   const { dispatch, workouts } = useWorkoutsContext();
 
   useEffect(() => {
-    // function to fetch workouts from the backend API
+    // function to fetch workouts from the backend api
     const fetchWorkouts = async () => {
       const response = await fetch('/api/workouts', {
         headers: { 'Authorization': `Bearer ${user.token}` }, // attach token for authentication
